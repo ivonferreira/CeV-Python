@@ -1,0 +1,21 @@
+from random import randint
+from time import sleep
+jogos = list()
+dados = list()
+print('-'*30)
+print(f'Joga na Mega')
+print('-'*30)
+palp = int(input('Quantos palpites você deseja? '))
+for n in range(1,palp+1):
+    dados.append(randint(1,60))
+    dados.append(randint(1,60))
+    dados.append(randint(1,60))
+    dados.append(randint(1,60))
+    dados.append(randint(1,60))
+    dados.append(randint(1,60))
+    dados.sort()
+    jogos.append(dados[:])
+    dados.clear()
+    print(f'Jogo {n}: {jogos[n-1]}')
+    sleep(0.5)
+print('Boa Sorte!')
